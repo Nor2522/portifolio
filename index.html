@@ -6,330 +6,14 @@
 <meta name="theme-color" content="#04070a">
 <title>Nor — Software Developer &amp; Penetration Tester</title>
 <meta name="description" content="Portfolio of Nor — software developer and penetration tester specializing in secure systems, application security, and offensive testing.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2304070a'/%3E%3Ctext x='50' y='72' font-family='monospace' font-weight='700' font-size='64' fill='%2339ff88' text-anchor='middle'%3E%3E%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ============ EDIT ME ============
-   Swap placeholder bio, projects, certifications, experience, stats and
-   links for Nor's real details before publishing. Search "EDIT" to find spots.
-================================== */
-
-:root{
-  --bg:#04070a;
-  --bg-panel:#080f0b;
-  --bg-panel-2:#0c1510;
-  --green:#39ff88;
-  --green-bright:#8dffc2;
-  --green-mid:#00cc66;
-  --green-dim:#0a4d2e;
-  --line:rgba(57,255,136,0.14);
-  --text:#d8ffe6;
-  --mute:#7fa890;
-  --red:#ff4757;
-  --amber:#ffb703;
-  --font-d:'JetBrains Mono',monospace;
-  --font-b:'Inter',sans-serif;
-  --maxw:1180px;
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font-b);
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-body.booting{overflow:hidden;height:100vh}
-::selection{background:var(--green-dim);color:var(--green-bright)}
-a{color:inherit;text-decoration:none}
-img,svg{display:block;max-width:100%}
-:focus-visible{outline:2px solid var(--green);outline-offset:3px}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-section{position:relative;padding:120px 0}
-@media(max-width:700px){section{padding:80px 0}}
-
-h1,h2,h3{font-family:var(--font-d);font-weight:700;letter-spacing:-0.01em}
-.eyebrow{
-  font-family:var(--font-d);font-size:.78rem;letter-spacing:.18em;
-  color:var(--green);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;
-  margin-bottom:14px;
-}
-.eyebrow::before{content:'';width:22px;height:1px;background:var(--green-mid)}
-.section-title{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:18px;min-height:1.2em}
-.section-lead{color:var(--mute);max-width:640px;font-size:1.02rem}
-
-/* scanline + grid atmosphere */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;
-  background:repeating-linear-gradient(0deg,rgba(255,255,255,0.018) 0px,rgba(255,255,255,0.018) 1px,transparent 1px,transparent 3px);
-  mix-blend-mode:overlay;
-}
-.grid-overlay{
-  position:fixed;inset:0;pointer-events:none;z-index:1;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;opacity:.25;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0%,transparent 70%);
-}
-.grain{
-  position:fixed;inset:0;pointer-events:none;z-index:8000;opacity:.045;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ===== boot sequence ===== */
-#boot{
-  position:fixed;inset:0;z-index:10000;background:#04070a;
-  display:flex;align-items:center;justify-content:center;
-  transition:opacity .6s ease, visibility .6s ease;
-  cursor:pointer;
-}
-#boot.hidden{opacity:0;visibility:hidden}
-#boot-text{
-  font-family:var(--font-d);color:var(--green);font-size:clamp(.85rem,2vw,1.05rem);
-  white-space:pre-wrap;max-width:600px;padding:0 24px;line-height:1.9;
-}
-#boot-text .cursor{display:inline-block;width:8px;height:1em;background:var(--green);vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
-#boot-skip{position:absolute;bottom:28px;right:32px;font-family:var(--font-d);font-size:.72rem;color:var(--mute);letter-spacing:.1em}
-@keyframes blink{50%{opacity:0}}
-
-/* ===== progress bar ===== */
-#progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--green);z-index:9500;width:0%;box-shadow:0 0 8px var(--green)}
-
-/* ===== nav ===== */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:900;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 32px;transition:background .3s,padding .3s,border-color .3s;
-  border-bottom:1px solid transparent;
-}
-nav.scrolled{background:rgba(4,7,10,.85);backdrop-filter:blur(10px);padding:14px 32px;border-color:var(--line)}
-.logo{font-family:var(--font-d);font-weight:700;font-size:1.05rem;color:var(--green-bright)}
-.logo span{color:var(--mute)}
-.nav-links{display:flex;gap:32px;font-family:var(--font-d);font-size:.82rem;letter-spacing:.03em}
-.nav-links a{position:relative;color:var(--text);opacity:.8;transition:opacity .2s,color .2s}
-.nav-links a:hover{opacity:1;color:var(--green-bright)}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--green);transition:width .25s}
-.nav-links a:hover::after{width:100%}
-.nav-cta{
-  font-family:var(--font-d);font-size:.78rem;border:1px solid var(--green-mid);color:var(--green-bright);
-  padding:9px 16px;letter-spacing:.04em;transition:background .2s,box-shadow .2s;display:inline-block;
-}
-.nav-cta:hover{background:var(--green-dim);box-shadow:0 0 16px rgba(57,255,136,.35)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1100}
-.burger span{width:24px;height:2px;background:var(--green)}
-@media(max-width:860px){
-  .nav-links,.nav-cta{display:none}
-  .burger{display:flex}
-}
-#mobile-menu{
-  position:fixed;inset:0;background:#04070a;z-index:1000;display:none;
-  flex-direction:column;align-items:center;justify-content:center;gap:28px;
-}
-#mobile-menu.open{display:flex}
-#mobile-menu a{font-family:var(--font-d);font-size:1.3rem;color:var(--text)}
-
-/* ===== buttons ===== */
-.magnetic{display:inline-block;will-change:transform}
-.btn{
-  font-family:var(--font-d);font-size:.85rem;letter-spacing:.04em;padding:14px 26px;
-  display:inline-flex;align-items:center;gap:10px;border:1px solid var(--green-mid);
-  position:relative;overflow:hidden;transition:box-shadow .25s;color:var(--green-bright);
-}
-.btn:hover{box-shadow:0 0 22px rgba(57,255,136,.4)}
-.btn-solid{background:var(--green);color:#03110a;border-color:var(--green)}
-.btn-solid:hover{box-shadow:0 0 26px rgba(57,255,136,.6)}
-
-/* ===== hero ===== */
-.hero{
-  min-height:100vh;display:flex;align-items:center;position:relative;padding-top:90px;overflow:hidden;
-}
-#matrix-rain{position:absolute;inset:0;width:100%;height:100%;opacity:.35;z-index:0}
-#hero-3d{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.85}
-.spotlight{
-  position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(480px circle at var(--sx,50%) var(--sy,30%),rgba(57,255,136,.12),transparent 70%);
-}
-.hero-inner{position:relative;z-index:2;max-width:760px}
-.hero h1{
-  font-size:clamp(3rem,8vw,5.6rem);line-height:1;color:var(--text);
-  text-shadow:0 0 30px rgba(57,255,136,.25);
-}
-.hero h1 .accent{color:var(--green);}
-.typed-row{
-  font-family:var(--font-d);font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--green-bright);
-  margin:22px 0 26px;min-height:1.6em;
-}
-.typed-row .cursor{display:inline-block;width:9px;height:1em;background:var(--green);vertical-align:text-bottom;animation:blink 1s steps(1) infinite;margin-left:2px}
-.hero p.desc{color:var(--mute);max-width:520px;margin-bottom:34px;font-size:1.02rem}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
-.scroll-cue{
-  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;
-  font-family:var(--font-d);font-size:.72rem;color:var(--mute);letter-spacing:.2em;
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-}
-.scroll-cue::after{content:'';width:1px;height:34px;background:linear-gradient(var(--green),transparent);animation:scrollline 1.8s ease infinite}
-@keyframes scrollline{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-/* ===== stats / readout strip ===== */
-.stats-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-panel);position:relative;z-index:2}
-.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat-cell{padding:34px 24px;text-align:center;border-left:1px solid var(--line)}
-.stat-cell:first-child{border-left:none}
-@media(max-width:780px){
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat-cell:nth-child(3){border-left:none}
-  .stat-cell:nth-child(1),.stat-cell:nth-child(2){border-bottom:1px solid var(--line)}
-}
-.stat-num{
-  font-family:var(--font-d);font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--green-bright);
-  text-shadow:0 0 22px rgba(57,255,136,.35);line-height:1;
-}
-.stat-label{font-family:var(--font-d);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:10px}
-
-/* ===== reveal ===== */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ===== glitch heading (hover bonus, decrypt handles scroll-in) ===== */
-.glitch{position:relative;display:inline-block}
-.glitch::before,.glitch::after{
-  content:attr(data-text);position:absolute;left:0;top:0;width:100%;height:100%;
-  background:var(--bg);overflow:hidden;opacity:0;
-}
-.glitch:hover::before{left:2px;text-shadow:-2px 0 var(--red);opacity:.8;animation:glitch1 .4s steps(2) infinite}
-.glitch:hover::after{left:-2px;text-shadow:2px 0 var(--green-bright);opacity:.8;animation:glitch2 .4s steps(2) infinite}
-@keyframes glitch1{0%{clip-path:inset(10% 0 70% 0)}50%{clip-path:inset(60% 0 5% 0)}100%{clip-path:inset(30% 0 40% 0)}}
-@keyframes glitch2{0%{clip-path:inset(70% 0 5% 0)}50%{clip-path:inset(15% 0 60% 0)}100%{clip-path:inset(40% 0 30% 0)}}
-
-/* ===== about ===== */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start;margin-top:50px}
-@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.about-grid p{color:var(--mute);margin-bottom:16px;font-size:1rem}
-.terminal{
-  background:var(--bg-panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;
-  box-shadow:0 30px 60px rgba(0,0,0,.5);
-}
-.terminal-bar{
-  display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--bg-panel-2);
-  border-bottom:1px solid var(--line);font-family:var(--font-d);font-size:.72rem;color:var(--mute);
-}
-.dot{width:9px;height:9px;border-radius:50%}
-.dot.r{background:#ff5f56}.dot.y{background:#ffbd2e}.dot.g{background:#27c93f}
-.terminal-body{padding:20px;font-family:var(--font-d);font-size:.85rem;color:var(--green-bright)}
-.terminal-body .k{color:var(--mute)}
-.terminal-body .row{margin-bottom:10px}
-
-/* ===== skills ===== */
-.skills-cols{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:50px}
-@media(max-width:780px){.skills-cols{grid-template-columns:1fr}}
-.skill-col h3{font-size:1rem;color:var(--green-bright);letter-spacing:.05em;margin-bottom:22px;display:flex;align-items:center;gap:10px}
-.skill-col h3::before{content:'';width:8px;height:8px;background:var(--green);box-shadow:0 0 8px var(--green)}
-.skill-item{margin-bottom:18px}
-.skill-item .label{display:flex;justify-content:space-between;font-size:.86rem;margin-bottom:6px;color:var(--mute);font-family:var(--font-d)}
-.skill-item .label b{color:var(--text);font-weight:500}
-.skill-bar{height:6px;background:var(--bg-panel-2);border-radius:3px;overflow:hidden;border:1px solid var(--line)}
-.skill-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green-dim),var(--green));transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
-
-.cert-strip{margin-top:60px;display:flex;flex-wrap:wrap;gap:14px}
-.cert-badge{
-  font-family:var(--font-d);font-size:.78rem;border:1px solid var(--green-dim);color:var(--green-bright);
-  padding:10px 16px;display:flex;align-items:center;gap:10px;background:var(--bg-panel);transition:border-color .2s,transform .2s;
-}
-.cert-badge:hover{border-color:var(--green);transform:translateY(-3px)}
-.cert-badge .ico{width:16px;height:16px;border:1px solid var(--green-mid);border-radius:50%;position:relative;flex:none}
-.cert-badge .ico::after{content:'';position:absolute;inset:3px;background:var(--green);border-radius:50%}
-
-/* ===== projects ===== */
-.filters{display:flex;gap:10px;margin:36px 0 40px;flex-wrap:wrap}
-.filter-btn{
-  font-family:var(--font-d);font-size:.78rem;letter-spacing:.03em;padding:9px 16px;
-  border:1px solid var(--line);color:var(--mute);background:transparent;cursor:pointer;transition:all .2s;
-}
-.filter-btn:hover{color:var(--green-bright);border-color:var(--green-mid)}
-.filter-btn.active{background:var(--green);color:#03110a;border-color:var(--green)}
-.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-@media(max-width:780px){.project-grid{grid-template-columns:1fr}}
-.project-card{
-  background:var(--bg-panel);border:1px solid var(--line);padding:28px;will-change:transform;
-  transition:transform .15s ease,border-color .25s,box-shadow .25s;transform-style:preserve-3d;
-}
-.project-card:hover{border-color:var(--green-mid);box-shadow:0 25px 50px rgba(0,0,0,.55)}
-.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
-.project-tag{
-  font-family:var(--font-d);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
-  padding:4px 9px;border:1px solid var(--green-dim);color:var(--green-bright);
-}
-.project-tag.security{border-color:rgba(255,71,87,.4);color:#ff8a93}
-.project-card h3{font-size:1.18rem;margin-bottom:10px;color:var(--text)}
-.project-card p{color:var(--mute);font-size:.92rem;margin-bottom:18px}
-.project-stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.project-stack span{font-family:var(--font-d);font-size:.7rem;color:var(--mute);border:1px solid var(--line);padding:3px 8px}
-.project-links{display:flex;gap:18px;font-family:var(--font-d);font-size:.78rem}
-.project-links a{color:var(--green-bright);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid transparent;transition:border-color .2s}
-.project-links a:hover{border-color:var(--green-bright)}
-
-/* ===== timeline ===== */
-.timeline{position:relative;margin-top:50px;padding-left:36px}
-.timeline::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--green-mid),transparent)}
-.t-item{position:relative;padding-bottom:48px}
-.t-item:last-child{padding-bottom:0}
-.t-item::before{
-  content:'';position:absolute;left:-36px;top:4px;width:11px;height:11px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--green);box-shadow:0 0 12px rgba(57,255,136,.5);
-}
-.t-meta{font-family:var(--font-d);font-size:.74rem;color:var(--green-bright);letter-spacing:.05em;margin-bottom:6px}
-.t-item h3{font-size:1.1rem;margin-bottom:6px;color:var(--text)}
-.t-item p{color:var(--mute);font-size:.92rem;max-width:560px}
-
-/* ===== contact ===== */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px;align-items:start}
-@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
-.field{margin-bottom:20px}
-.field label{display:block;font-family:var(--font-d);font-size:.76rem;color:var(--mute);margin-bottom:8px;letter-spacing:.05em}
-.field input,.field textarea{
-  width:100%;background:var(--bg-panel);border:1px solid var(--line);color:var(--text);
-  padding:13px 14px;font-family:var(--font-b);font-size:.92rem;transition:border-color .2s,box-shadow .2s;
-}
-.field input:focus,.field textarea:focus{border-color:var(--green-mid);box-shadow:0 0 0 3px rgba(57,255,136,.1);outline:none}
-.field textarea{resize:vertical;min-height:130px}
-#form-status{font-family:var(--font-d);font-size:.8rem;color:var(--green-bright);margin-top:14px;opacity:0;transition:opacity .3s}
-#form-status.visible{opacity:1}
-.social-row{display:flex;gap:14px;margin-top:28px}
-.social-row a{
-  width:42px;height:42px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
-  transition:border-color .2s,transform .2s,box-shadow .2s;
-}
-.social-row a:hover{border-color:var(--green);transform:translateY(-3px);box-shadow:0 0 16px rgba(57,255,136,.3)}
-.social-row svg{width:18px;height:18px;stroke:var(--green-bright)}
-.pgp-note{font-family:var(--font-d);font-size:.76rem;color:var(--mute);margin-top:22px;line-height:1.8}
-
-/* ===== footer ===== */
-footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--font-d);font-size:.76rem;color:var(--mute)}
-.footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-#status-line span{color:var(--green-bright)}
-
-/* ===== back to top ===== */
-#top-btn{
-  position:fixed;bottom:28px;right:28px;width:46px;height:46px;border:1px solid var(--green-mid);
-  background:rgba(4,7,10,.8);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;
-  cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,box-shadow .2s;z-index:500;
-}
-#top-btn.show{opacity:1;visibility:visible}
-#top-btn:hover{box-shadow:0 0 18px rgba(57,255,136,.4)}
-#top-btn svg{width:16px;height:16px;stroke:var(--green)}
-
-@media(prefers-reduced-motion: reduce){
-  *{animation-duration:.001s !important;transition-duration:.001s !important}
-}
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="booting">
 
-<!-- boot sequence -->
 <div id="boot"><div id="boot-text"></div><div id="boot-skip">click anywhere to skip</div></div>
 
 <div id="progress-bar"></div>
@@ -337,29 +21,30 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--font-d)
 <div class="grain"></div>
 
 <nav id="nav">
-  <a href="#home" class="logo">nor<span>@</span>security<span>:~$</span></a>
+  <a href="index.html" class="logo">nor<span>@</span>security<span>:~$</span></a>
   <div class="nav-links">
-    <a href="#about">about</a>
-    <a href="#skills">skills</a>
-    <a href="#projects">projects</a>
-    <a href="#experience">experience</a>
-    <a href="#contact">contact</a>
+    <a href="about.html">about</a>
+    <a href="skills.html">skills</a>
+    <a href="projects.html">projects</a>
+    <a href="experience.html">experience</a>
+    <a href="contact.html">contact</a>
   </div>
-  <span class="magnetic"><a href="#contact" class="nav-cta">get in touch</a></span>
+  <span class="magnetic"><a href="contact.html" class="nav-cta">get in touch</a></span>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
 
 <div id="mobile-menu">
-  <a href="#about">about</a>
-  <a href="#skills">skills</a>
-  <a href="#projects">projects</a>
-  <a href="#experience">experience</a>
-  <a href="#contact">contact</a>
+  <a href="index.html">home</a>
+  <a href="about.html">about</a>
+  <a href="skills.html">skills</a>
+  <a href="projects.html">projects</a>
+  <a href="experience.html">experience</a>
+  <a href="contact.html">contact</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <canvas id="matrix-rain"></canvas>
+  <canvas id="hero-rain"></canvas>
   <canvas id="hero-3d"></canvas>
   <div class="spotlight" id="spotlight"></div>
   <div class="wrap hero-inner">
@@ -368,8 +53,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--font-d)
     <div class="typed-row"><span id="typed"></span><span class="cursor"></span></div>
     <p class="desc"><!-- EDIT: one-line value statement -->I build secure software, then try to break it before someone else does. Full-stack development meets offensive security testing.</p>
     <div class="hero-actions">
-      <span class="magnetic"><a href="#projects" class="btn btn-solid">view projects</a></span>
-      <span class="magnetic"><a href="#contact" class="btn">download resume</a></span>
+      <span class="magnetic"><a href="projects.html" class="btn btn-solid">view projects</a></span>
+      <span class="magnetic"><a href="resume.pdf" class="btn" target="_blank" rel="noopener">download resume</a></span>
     </div>
   </div>
   <div class="scroll-cue">scroll</div>
@@ -386,17 +71,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--font-d)
   </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- ABOUT PREVIEW -->
+<section id="about-preview">
   <div class="wrap">
-    <div class="eyebrow reveal">whoami</div>
-    <h2 class="section-title glitch decrypt reveal" data-text="About Nor">About Nor</h2>
     <div class="about-grid">
       <div class="reveal">
-        <!-- EDIT: real bio -->
+        <div class="eyebrow">whoami</div>
+        <h2 class="section-title glitch decrypt" data-text="Two sides of the same skillset">Two sides of the same skillset</h2>
+        <!-- EDIT: real short bio -->
         <p>I'm a software developer and penetration tester who's spent the last several years working both sides of the fence: shipping production applications, and then trying to find every way to break into them.</p>
-        <p>That dual perspective is the core of how I work. As a developer, I write code that anticipates how it could be attacked. As a pentester, I think like an engineer who knows exactly where the corners were cut.</p>
-        <p>My work spans web application security, network penetration testing, secure API design, and red-team engagements — with a constant focus on turning findings into fixes, not just findings into reports.</p>
+        <p>That dual perspective is the core of how I work — I write code that anticipates how it could be attacked, and test systems like someone who knows exactly where corners get cut.</p>
+        <span class="magnetic"><a href="about.html" class="btn">read the full story →</a></span>
       </div>
       <div class="terminal reveal">
         <div class="terminal-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span>nor — profile.sh</span></div>
@@ -411,478 +96,88 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--font-d)
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="wrap">
-    <div class="eyebrow reveal">capabilities</div>
-    <h2 class="section-title glitch decrypt reveal" data-text="Skills &amp; Tools">Skills &amp; Tools</h2>
-    <p class="section-lead reveal">A working stack on both the build side and the break side.</p>
-
-    <div class="skills-cols">
-      <div class="skill-col reveal">
-        <h3>development</h3>
-        <div class="skill-item"><div class="label"><b>Python</b><span>92%</span></div><div class="skill-bar"><i data-w="92%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>JavaScript / TypeScript</b><span>88%</span></div><div class="skill-bar"><i data-w="88%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>React / Node.js</b><span>85%</span></div><div class="skill-bar"><i data-w="85%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>Go</b><span>70%</span></div><div class="skill-bar"><i data-w="70%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>Docker / CI-CD</b><span>80%</span></div><div class="skill-bar"><i data-w="80%"></i></div></div>
-      </div>
-      <div class="skill-col reveal">
-        <h3>offensive security</h3>
-        <div class="skill-item"><div class="label"><b>Burp Suite</b><span>95%</span></div><div class="skill-bar"><i data-w="95%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>Metasploit / Nmap</b><span>90%</span></div><div class="skill-bar"><i data-w="90%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>OWASP Top 10</b><span>93%</span></div><div class="skill-bar"><i data-w="93%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>Active Directory Attacks</b><span>78%</span></div><div class="skill-bar"><i data-w="78%"></i></div></div>
-        <div class="skill-item"><div class="label"><b>Wireshark / Network Analysis</b><span>84%</span></div><div class="skill-bar"><i data-w="84%"></i></div></div>
-      </div>
-    </div>
-
-    <div class="cert-strip reveal">
-      <!-- EDIT: real certifications -->
-      <div class="cert-badge"><span class="ico"></span>OSCP</div>
-      <div class="cert-badge"><span class="ico"></span>CEH</div>
-      <div class="cert-badge"><span class="ico"></span>CompTIA Security+</div>
-      <div class="cert-badge"><span class="ico"></span>eJPT</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
+<!-- FEATURED WORK -->
+<section id="featured-work">
   <div class="wrap">
     <div class="eyebrow reveal">selected work</div>
-    <h2 class="section-title glitch decrypt reveal" data-text="Projects &amp; Engagements">Projects &amp; Engagements</h2>
-    <p class="section-lead reveal">A mix of software I've built and security work I've conducted.</p>
+    <h2 class="section-title glitch decrypt reveal" data-text="Featured Projects">Featured Projects</h2>
+    <p class="section-lead reveal">A mix of software I've built and security work I've conducted. <a href="projects.html" style="color:var(--green-bright);border-bottom:1px solid var(--green-dim)">See everything →</a></p>
 
-    <div class="filters reveal">
-      <button class="filter-btn active" data-filter="all">all</button>
-      <button class="filter-btn" data-filter="dev">development</button>
-      <button class="filter-btn" data-filter="security">security</button>
-    </div>
-
-    <div class="project-grid">
-      <!-- EDIT: replace with real projects -->
-      <div class="project-card reveal" data-category="dev">
+    <div class="project-grid" style="margin-top:36px">
+      <!-- EDIT: keep these in sync with projects.html -->
+      <div class="project-card reveal">
         <div class="project-top"><span class="project-tag">development</span></div>
         <h3>SecureAuth API</h3>
         <p>A hardened authentication service with JWT rotation, rate limiting, and brute-force lockouts built in from day one.</p>
         <div class="project-stack"><span>Node.js</span><span>PostgreSQL</span><span>Redis</span></div>
-        <div class="project-links"><a href="#">GitHub →</a><a href="#">Live demo →</a></div>
+        <div class="project-links"><a href="projects.html#p-secureauth">Full case study →</a></div>
       </div>
 
-      <div class="project-card reveal" data-category="security">
+      <div class="project-card reveal">
         <div class="project-top"><span class="project-tag security">security</span></div>
         <h3>E-Commerce Platform Pentest</h3>
         <p>Black-box engagement uncovering an IDOR vulnerability and a stored XSS chain in the checkout flow; both remediated pre-launch.</p>
         <div class="project-stack"><span>Burp Suite</span><span>OWASP ZAP</span></div>
-        <div class="project-links"><a href="#">Read write-up →</a></div>
+        <div class="project-links"><a href="projects.html#p-ecommerce-pentest">Full case study →</a></div>
       </div>
 
-      <div class="project-card reveal" data-category="dev">
-        <div class="project-top"><span class="project-tag">development</span></div>
-        <h3>ThreatWatch Dashboard</h3>
-        <p>Real-time log aggregation dashboard for flagging suspicious authentication patterns across distributed services.</p>
-        <div class="project-stack"><span>React</span><span>WebSocket</span><span>Go</span></div>
-        <div class="project-links"><a href="#">GitHub →</a></div>
-      </div>
-
-      <div class="project-card reveal" data-category="security">
+      <div class="project-card reveal">
         <div class="project-top"><span class="project-tag security">security</span></div>
         <h3>Internal Network Penetration Test</h3>
         <p>Simulated insider-threat engagement; achieved domain admin via Kerberoasting and misconfigured GPO permissions.</p>
         <div class="project-stack"><span>Impacket</span><span>BloodHound</span><span>Mimikatz</span></div>
-        <div class="project-links"><a href="#">Read write-up →</a></div>
-      </div>
-
-      <div class="project-card reveal" data-category="dev">
-        <div class="project-top"><span class="project-tag">development</span></div>
-        <h3>Distributed Task Queue</h3>
-        <p>A horizontally scalable job queue with at-least-once delivery guarantees and dead-letter handling.</p>
-        <div class="project-stack"><span>Go</span><span>Redis</span><span>Docker</span></div>
-        <div class="project-links"><a href="#">GitHub →</a></div>
-      </div>
-
-      <div class="project-card reveal" data-category="security">
-        <div class="project-top"><span class="project-tag security">security</span></div>
-        <h3>CTF — Buffer Overflow Exploitation</h3>
-        <p>Write-up walking through a stack-based buffer overflow on a HackTheBox machine, from fuzzing to shell.</p>
-        <div class="project-stack"><span>GDB</span><span>pwntools</span></div>
-        <div class="project-links"><a href="#">Read write-up →</a></div>
+        <div class="project-links"><a href="projects.html#p-internal-pentest">Full case study →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrap">
-    <div class="eyebrow reveal">timeline</div>
-    <h2 class="section-title glitch decrypt reveal" data-text="Experience">Experience</h2>
-
-    <div class="timeline">
-      <!-- EDIT: real roles -->
-      <div class="t-item reveal">
-        <div class="t-meta">2024 — present</div>
-        <h3>Penetration Tester · <!-- EDIT -->Company Name</h3>
-        <p>Lead web application and network pentest engagements for clients across fintech and healthcare, delivering remediation-focused reports.</p>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-meta">2022 — 2024</div>
-        <h3>Software Engineer · <!-- EDIT -->Company Name</h3>
-        <p>Built and maintained backend services handling sensitive user data; introduced automated security testing into the CI pipeline.</p>
-      </div>
-      <div class="t-item reveal">
-        <div class="t-meta">2021 — 2022</div>
-        <h3>Junior Developer · <!-- EDIT -->Company Name</h3>
-        <p>Shipped full-stack features and began specializing in application security through internal bug bounty participation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="eyebrow reveal">connect</div>
-    <h2 class="section-title glitch decrypt reveal" data-text="Get In Touch">Get In Touch</h2>
-    <p class="section-lead reveal">Open to roles, freelance pentest engagements, and interesting problems.</p>
-
-    <div class="contact-grid">
-      <form id="contact-form" class="reveal">
-        <div class="field"><label for="name">name</label><input id="name" type="text" required></div>
-        <div class="field"><label for="email">email</label><input id="email" type="email" required></div>
-        <div class="field"><label for="message">message</label><textarea id="message" required></textarea></div>
-        <span class="magnetic"><button type="submit" class="btn btn-solid">send message</button></span>
-        <div id="form-status"></div>
-      </form>
-
-      <div class="reveal">
-        <p style="color:var(--mute)">Prefer email or a quick message? Reach out directly — links below.</p>
-        <div class="social-row">
-          <a href="#" aria-label="GitHub" title="GitHub">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.93.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.27 9.27 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
-          </a>
-          <a href="#" aria-label="LinkedIn" title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 1 1 4 0V17M11 12.5V17"/></svg>
-          </a>
-          <a href="#" aria-label="Email" title="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          </a>
-        </div>
-        <p class="pgp-note"><!-- EDIT --> &gt; for sensitive disclosures, PGP key available on request.<br>&gt; response time: usually within 24 hours.</p>
-      </div>
-    </div>
+<!-- CONTACT CTA BANNER -->
+<section id="cta-banner" style="padding-bottom:130px">
+  <div class="wrap reveal" style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">open to work</div>
+    <h2 class="section-title glitch decrypt" data-text="Let's build something secure." style="margin:0 auto 26px">Let's build something secure.</h2>
+    <span class="magnetic"><a href="contact.html" class="btn btn-solid">get in touch →</a></span>
   </div>
 </section>
 
 <footer>
-  <div class="wrap footer-row">
-    <span>© <span id="year"></span> Nor. All rights reserved.</span>
-    <span id="status-line">STATUS: <span>ONLINE</span> · UPTIME: <span id="uptime">00:00:00</span></span>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>nor</h4>
+        <p>Software developer and penetration tester. I build things, then try to break them — professionally.</p>
+        <div class="footer-social">
+          <a href="https://github.com/nor" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.93.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.27 9.27 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a>
+          <a href="https://linkedin.com/in/nor" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 1 1 4 0V17M11 12.5V17"/></svg></a>
+          <a href="mailto:nor@example.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>more</h4>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <span>© <span id="year"></span> Nor. All rights reserved.</span>
+      <span id="status-line">STATUS: <span>ONLINE</span> · UPTIME: <span id="uptime">00:00:00</span></span>
+    </div>
   </div>
 </footer>
 
-<div id="top-btn" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</div>
+<div id="top-btn" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ---------- boot sequence ---------- */
-(function boot(){
-  const el = document.getElementById('boot-text');
-  const lines = [
-    '> initializing secure session...',
-    '> loading profile: nor',
-    '> scanning ports... 22 80 443 open',
-    '> verifying credentials... access granted',
-    '> welcome.'
-  ];
-  let li=0, ci=0, out='';
-  function finish(){
-    document.getElementById('boot').classList.add('hidden');
-    document.body.classList.remove('booting');
-    setTimeout(()=>{ const b=document.getElementById('boot'); if(b) b.remove(); },700);
-  }
-  if(reduceMotion){ finish(); return; }
-  function typeLine(){
-    if(li>=lines.length){ setTimeout(finish,500); return; }
-    const line = lines[li];
-    if(ci<line.length){
-      out += line[ci]; ci++;
-      el.innerHTML = out + '<span class="cursor"></span>';
-      setTimeout(typeLine, 18+Math.random()*22);
-    } else {
-      out += '\n'; li++; ci=0;
-      setTimeout(typeLine, 220);
-    }
-  }
-  typeLine();
-  document.getElementById('boot').addEventListener('click', finish);
-})();
-
-/* ---------- progress bar + nav scroll state ---------- */
-const nav = document.getElementById('nav');
-const progress = document.getElementById('progress-bar');
-const topBtn = document.getElementById('top-btn');
-window.addEventListener('scroll', ()=>{
-  const h = document.documentElement;
-  const pct = (h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
-  progress.style.width = pct+'%';
-  nav.classList.toggle('scrolled', h.scrollTop>40);
-  topBtn.classList.toggle('show', h.scrollTop>500);
-});
-topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-/* ---------- mobile menu ---------- */
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobile-menu');
-burger.addEventListener('click', ()=>mobileMenu.classList.toggle('open'));
-mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>mobileMenu.classList.remove('open')));
-
-/* ---------- typed role text ---------- */
-(function typedRoles(){
-  const roles = ['Software Developer', 'Penetration Tester', 'Security Researcher'];
-  const el = document.getElementById('typed');
-  let r=0, c=0, deleting=false;
-  function tick(){
-    const word = roles[r];
-    el.textContent = deleting ? word.slice(0,c--) : word.slice(0,c++);
-    let delay = deleting ? 35 : 70;
-    if(!deleting && c===word.length+1){ deleting=true; delay=1400; }
-    else if(deleting && c===0){ deleting=false; r=(r+1)%roles.length; delay=300; }
-    setTimeout(tick, delay);
-  }
-  tick();
-})();
-
-/* ---------- matrix rain ---------- */
-(function matrixRain(){
-  const canvas = document.getElementById('matrix-rain');
-  const ctx = canvas.getContext('2d');
-  let w,h,cols,drops;
-  const chars = 'アイウエオカキクケコサシスセソタチツテト0123456789';
-  function setup(){
-    w = canvas.width = canvas.clientWidth;
-    h = canvas.height = canvas.clientHeight;
-    cols = Math.floor(w/16);
-    drops = new Array(cols).fill(0).map(()=>Math.random()*-50);
-  }
-  function draw(){
-    ctx.fillStyle = 'rgba(4,7,10,0.09)';
-    ctx.fillRect(0,0,w,h);
-    ctx.fillStyle = '#0fa860';
-    ctx.font = '15px monospace';
-    for(let i=0;i<drops.length;i++){
-      const ch = chars[Math.floor(Math.random()*chars.length)];
-      ctx.fillText(ch, i*16, drops[i]*16);
-      if(drops[i]*16 > h && Math.random() > 0.975) drops[i]=0;
-      drops[i]++;
-    }
-  }
-  setup();
-  window.addEventListener('resize', setup);
-  if(!reduceMotion){ setInterval(draw, 50); }
-})();
-
-/* ---------- three.js network sphere ---------- */
-let heroMx=0, heroMy=0;
-(function heroScene(){
-  if(typeof THREE === 'undefined') return;
-  const canvas = document.getElementById('hero-3d');
-  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-  camera.position.z = 9.5;
-
-  const NODE_COUNT = 120, radius = 4.2, maxDist = 1.5;
-  const pts = [];
-  for(let i=0;i<NODE_COUNT;i++){
-    const y = 1-(i/(NODE_COUNT-1))*2;
-    const r = Math.sqrt(1-y*y);
-    const theta = Math.PI*(1+Math.sqrt(5))*i;
-    pts.push(new THREE.Vector3(Math.cos(theta)*r*radius, y*radius, Math.sin(theta)*r*radius));
-  }
-  const pointsGeo = new THREE.BufferGeometry().setFromPoints(pts);
-  const pointsMat = new THREE.PointsMaterial({color:0x39ff88,size:0.07,transparent:true,opacity:0.9});
-  const pointCloud = new THREE.Points(pointsGeo,pointsMat);
-
-  const lineVerts = [];
-  for(let i=0;i<pts.length;i++){
-    for(let j=i+1;j<pts.length;j++){
-      if(pts[i].distanceTo(pts[j]) < maxDist){
-        lineVerts.push(pts[i].x,pts[i].y,pts[i].z, pts[j].x,pts[j].y,pts[j].z);
-      }
-    }
-  }
-  const lineGeo = new THREE.BufferGeometry();
-  lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(lineVerts,3));
-  const lineMat = new THREE.LineBasicMaterial({color:0x00cc66, transparent:true, opacity:0.16});
-  const lines = new THREE.LineSegments(lineGeo,lineMat);
-
-  const group = new THREE.Group();
-  group.add(pointCloud); group.add(lines);
-  scene.add(group);
-
-  function resize(){
-    const w = canvas.clientWidth, h = canvas.clientHeight;
-    renderer.setSize(w,h,false);
-    camera.aspect = w/h;
-    camera.updateProjectionMatrix();
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function animate(){
-    requestAnimationFrame(animate);
-    if(!reduceMotion){
-      group.rotation.y += 0.0016;
-      group.rotation.x += (heroMy*0.4 - group.rotation.x)*0.02;
-      group.rotation.y += (heroMx*0.0015);
-    }
-    renderer.render(scene,camera);
-  }
-  animate();
-})();
-
-/* ---------- shared hero mousemove: 3D tilt + cursor spotlight ---------- */
-const heroEl = document.getElementById('home');
-const spotlight = document.getElementById('spotlight');
-heroEl.addEventListener('mousemove', e=>{
-  const rect = heroEl.getBoundingClientRect();
-  heroMx = (e.clientX/window.innerWidth)-0.5;
-  heroMy = (e.clientY/window.innerHeight)-0.5;
-  const px = ((e.clientX-rect.left)/rect.width)*100;
-  const py = ((e.clientY-rect.top)/rect.height)*100;
-  spotlight.style.setProperty('--sx', px+'%');
-  spotlight.style.setProperty('--sy', py+'%');
-});
-
-/* ---------- decrypt / scramble text-in effect ---------- */
-const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01#$%&*/\\';
-function decryptText(el){
-  const final = el.dataset.text || el.textContent;
-  let iter = 0;
-  clearInterval(el._decryptTimer);
-  el._decryptTimer = setInterval(()=>{
-    el.textContent = final.split('').map((ch,idx)=>{
-      if(ch===' ') return ' ';
-      if(idx < iter) return final[idx];
-      return SCRAMBLE_CHARS[Math.floor(Math.random()*SCRAMBLE_CHARS.length)];
-    }).join('');
-    if(iter >= final.length){ clearInterval(el._decryptTimer); el.textContent = final; }
-    iter += 0.6;
-  }, 28);
-}
-
-/* ---------- scroll reveal (+ decrypt headings, + skill bars, + stat counters) ---------- */
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach((entry,i)=>{
-    if(entry.isIntersecting){
-      entry.target.style.transitionDelay = (i%4)*0.08+'s';
-      entry.target.classList.add('visible');
-      if(entry.target.classList.contains('decrypt') && !reduceMotion){
-        decryptText(entry.target);
-      }
-      if(entry.target.classList.contains('stat-cell')){
-        animateCount(entry.target.querySelector('.stat-num'));
-      }
-      io.unobserve(entry.target);
-    }
-  });
-},{threshold:0.15});
-revealEls.forEach(el=>io.observe(el));
-
-function animateCount(el){
-  const target = parseInt(el.dataset.count,10);
-  const suffix = el.dataset.suffix || '';
-  if(reduceMotion){ el.textContent = target+suffix; return; }
-  let cur = 0;
-  const step = Math.max(1, Math.round(target/40));
-  const t = setInterval(()=>{
-    cur += step;
-    if(cur >= target){ cur = target; clearInterval(t); }
-    el.textContent = cur+suffix;
-  }, 30);
-}
-
-const skillSection = document.getElementById('skills');
-const skillIO = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      document.querySelectorAll('.skill-bar i').forEach(bar=>{ bar.style.width = bar.dataset.w; });
-      skillIO.disconnect();
-    }
-  });
-},{threshold:0.3});
-if(skillSection) skillIO.observe(skillSection);
-
-/* ---------- 3D tilt project cards ---------- */
-document.querySelectorAll('.project-card').forEach(card=>{
-  card.addEventListener('mousemove', e=>{
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX-rect.left, y = e.clientY-rect.top;
-    const cx = rect.width/2, cy = rect.height/2;
-    const rx = ((y-cy)/cy)*-7, ry = ((x-cx)/cx)*7;
-    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
-  });
-  card.addEventListener('mouseleave', ()=>{ card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)'; });
-});
-
-/* ---------- magnetic buttons ---------- */
-if(window.matchMedia('(pointer: fine)').matches && !reduceMotion){
-  document.querySelectorAll('.magnetic').forEach(wrap=>{
-    const inner = wrap.querySelector('a,button');
-    if(!inner) return;
-    wrap.addEventListener('mousemove', e=>{
-      const rect = wrap.getBoundingClientRect();
-      const x = e.clientX-rect.left-rect.width/2;
-      const y = e.clientY-rect.top-rect.height/2;
-      inner.style.transform = `translate(${x*0.25}px, ${y*0.35}px)`;
-      inner.style.transition = 'transform .05s linear';
-    });
-    wrap.addEventListener('mouseleave', ()=>{
-      inner.style.transition = 'transform .3s cubic-bezier(.2,.8,.2,1)';
-      inner.style.transform = 'translate(0,0)';
-    });
-  });
-}
-
-/* ---------- project filters ---------- */
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.project-card').forEach(card=>{
-      card.style.display = (f==='all'||card.dataset.category===f) ? '' : 'none';
-    });
-  });
-});
-
-/* ---------- contact form (static) ---------- */
-document.getElementById('contact-form').addEventListener('submit', e=>{
-  e.preventDefault();
-  const status = document.getElementById('form-status');
-  status.textContent = '> message queued. connect this form to a backend (e.g. Formspree) to actually receive it.';
-  status.classList.add('visible');
-  e.target.reset();
-});
-
-/* ---------- footer year + uptime clock ---------- */
-document.getElementById('year').textContent = new Date().getFullYear();
-const start = Date.now();
-setInterval(()=>{
-  const s = Math.floor((Date.now()-start)/1000);
-  const hh = String(Math.floor(s/3600)).padStart(2,'0');
-  const mm = String(Math.floor((s%3600)/60)).padStart(2,'0');
-  const ss = String(s%60).padStart(2,'0');
-  document.getElementById('uptime').textContent = `${hh}:${mm}:${ss}`;
-},1000);
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#04070a">
+<title>About — Nor</title>
+<meta name="description" content="About Nor — software developer and penetration tester.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2304070a'/%3E%3Ctext x='50' y='72' font-family='monospace' font-weight='700' font-size='64' fill='%2339ff88' text-anchor='middle'%3E%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div class="grid-overlay"></div>
+<div class="grain"></div>
+<canvas id="bg-rain"></canvas>
+
+<nav id="nav">
+  <a href="index.html" class="logo">nor<span>@</span>security<span>:~$</span></a>
+  <div class="nav-links">
+    <a href="about.html">about</a>
+    <a href="skills.html">skills</a>
+    <a href="projects.html">projects</a>
+    <a href="experience.html">experience</a>
+    <a href="contact.html">contact</a>
+  </div>
+  <span class="magnetic"><a href="contact.html" class="nav-cta">get in touch</a></span>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div id="mobile-menu">
+  <a href="index.html">home</a>
+  <a href="about.html">about</a>
+  <a href="skills.html">skills</a>
+  <a href="projects.html">projects</a>
+  <a href="experience.html">experience</a>
+  <a href="contact.html">contact</a>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">home</a><span class="sep">/</span><span class="current">about</span></div>
+    <div class="eyebrow">whoami</div>
+    <h1 class="glitch decrypt" data-text="About Nor">About Nor</h1>
+    <p class="section-lead">The short version: I build software, then I try to break it. The long version is below.</p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <!-- EDIT: real bio -->
+        <p>I'm a software developer and penetration tester who's spent the last several years working both sides of the fence: shipping production applications, and then trying to find every way to break into them.</p>
+        <p>That dual perspective is the core of how I work. As a developer, I write code that anticipates how it could be attacked — input validation, least-privilege access, sane session handling, none of it bolted on after the fact. As a pentester, I think like an engineer who knows exactly where the corners were cut under deadline pressure, because I've cut them myself.</p>
+        <p>My work spans web application security, network penetration testing, secure API design, and red-team engagements — with a constant focus on turning findings into fixes, not just findings into reports nobody reads.</p>
+        <p>Outside of client work, I spend time on CTFs, contributing to open-source security tooling, and building projects that solve real problems rather than padding a portfolio.</p>
+
+        <div class="quick-facts">
+          <!-- EDIT -->
+          <div class="fact"><div class="k">based in</div><div class="v">Remote / Available worldwide</div></div>
+          <div class="fact"><div class="k">experience</div><div class="v">4+ years</div></div>
+          <div class="fact"><div class="k">specialty</div><div class="v">AppSec &amp; Network Pentesting</div></div>
+          <div class="fact"><div class="k">availability</div><div class="v">Open to opportunities</div></div>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span>nor — profile.sh</span></div>
+        <div class="terminal-body">
+          <div class="row"><span class="k">role</span><br>Software Developer / Penetration Tester</div>
+          <div class="row"><span class="k">experience</span><br><!-- EDIT -->4+ years</div>
+          <div class="row"><span class="k">focus</span><br>AppSec · Network Pentesting · Secure Backend Dev</div>
+          <div class="row"><span class="k">languages</span><br>Python · JavaScript/TypeScript · Go</div>
+          <div class="row"><span class="k">status</span><br>open to opportunities</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:70px;display:flex;gap:16px;flex-wrap:wrap">
+      <span class="magnetic"><a href="skills.html" class="btn">see my skills →</a></span>
+      <span class="magnetic"><a href="experience.html" class="btn">view experience →</a></span>
+      <span class="magnetic"><a href="resume.pdf" class="btn btn-solid" target="_blank" rel="noopener">download resume</a></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>nor</h4>
+        <p>Software developer and penetration tester. I build things, then try to break them — professionally.</p>
+        <div class="footer-social">
+          <a href="https://github.com/nor" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.93.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.27 9.27 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a>
+          <a href="https://linkedin.com/in/nor" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 1 1 4 0V17M11 12.5V17"/></svg></a>
+          <a href="mailto:nor@example.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>more</h4>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <span>© <span id="year"></span> Nor. All rights reserved.</span>
+      <span id="status-line">STATUS: <span>ONLINE</span> · UPTIME: <span id="uptime">00:00:00</span></span>
+    </div>
+  </div>
+</footer>
+
+<div id="top-btn" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+

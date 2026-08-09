@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#04070a">
+<title>Contact — Nor</title>
+<meta name="description" content="Get in touch with Nor — software developer and penetration tester.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2304070a'/%3E%3Ctext x='50' y='72' font-family='monospace' font-weight='700' font-size='64' fill='%2339ff88' text-anchor='middle'%3E%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div class="grid-overlay"></div>
+<div class="grain"></div>
+<canvas id="bg-rain"></canvas>
+
+<nav id="nav">
+  <a href="index.html" class="logo">nor<span>@</span>security<span>:~$</span></a>
+  <div class="nav-links">
+    <a href="about.html">about</a>
+    <a href="skills.html">skills</a>
+    <a href="projects.html">projects</a>
+    <a href="experience.html">experience</a>
+    <a href="contact.html">contact</a>
+  </div>
+  <span class="magnetic"><a href="contact.html" class="nav-cta">get in touch</a></span>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div id="mobile-menu">
+  <a href="index.html">home</a>
+  <a href="about.html">about</a>
+  <a href="skills.html">skills</a>
+  <a href="projects.html">projects</a>
+  <a href="experience.html">experience</a>
+  <a href="contact.html">contact</a>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">home</a><span class="sep">/</span><span class="current">contact</span></div>
+    <div class="eyebrow">connect</div>
+    <h1 class="glitch decrypt" data-text="Get In Touch">Get In Touch</h1>
+    <p class="section-lead">Open to roles, freelance pentest engagements, and interesting problems.</p>
+  </div>
+</header>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <form id="contact-form" class="reveal" novalidate>
+        <div class="field">
+          <label for="name">name</label>
+          <input id="name" name="name" type="text" required minlength="2" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="email">email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="message">message</label>
+          <textarea id="message" name="message" required minlength="10" placeholder="What are you working on?"></textarea>
+        </div>
+        <span class="magnetic"><button type="submit" class="btn btn-solid">send message</button></span>
+        <div id="form-status" role="status"></div>
+      </form>
+
+      <div class="reveal">
+        <p style="color:var(--mute)">Prefer email? This one goes straight to my inbox — no form needed.</p>
+        <a class="direct-email" href="mailto:nor@example.com"><!-- EDIT: real email -->nor@example.com</a>
+
+        <div class="social-row">
+          <a href="https://github.com/nor" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.93.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.27 9.27 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/nor" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 1 1 4 0V17M11 12.5V17"/></svg>
+          </a>
+          <a href="https://tryhackme.com/p/nor" target="_blank" rel="noopener" aria-label="TryHackMe" title="TryHackMe">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </a>
+        </div>
+        <p class="pgp-note"><!-- EDIT --> &gt; for sensitive disclosures, PGP key available on request.<br>&gt; response time: usually within 24 hours.<br>&gt; for active vulnerabilities affecting production systems, lead with severity in the subject line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>nor</h4>
+        <p>Software developer and penetration tester. I build things, then try to break them — professionally.</p>
+        <div class="footer-social">
+          <a href="https://github.com/nor" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.93.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.27 9.27 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a>
+          <a href="https://linkedin.com/in/nor" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 1 1 4 0V17M11 12.5V17"/></svg></a>
+          <a href="mailto:nor@example.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>more</h4>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <span>© <span id="year"></span> Nor. All rights reserved.</span>
+      <span id="status-line">STATUS: <span>ONLINE</span> · UPTIME: <span id="uptime">00:00:00</span></span>
+    </div>
+  </div>
+</footer>
+
+<div id="top-btn" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
